@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      
+   
+    
+     <h1>MY TODO LIST</h1>
+     <input id="inp" type="text">
+     <button id="but">Add</button>
+     <div id="par">
+        <div id="new_ele"></div>
+     </div>
+    
+
+
+    
+
+    <script>
+
+        document.getElementById("but").onclick=function (){
+           let a= document.querySelector("input").value;
+             console.log(a);
+             let ele=document.getElementById('new_ele');
+              let listItem =document.createElement('li');
+              listItem.innerHTML=`${a} <button class="del">Delete</button> <button id="com">Complete</button>` ;
+              ele.appendChild(listItem);
+
+              listItem.querySelector('.del').onclick=()=>{
+                listItem.remove();
+              }
+              listItem.querySelector('#com').onclick=()=>{
+                listItem.style.textDecoration = 'line-through';
+              }
+              
+               }
+
+           
+
+    </script>
+
+
+</body>
+</html>
